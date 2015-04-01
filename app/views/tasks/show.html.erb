@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
+<h2 class"todo_list_sub_title"><%= @task.name %></h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
-
-<p>
-  <strong>Complete:</strong>
-  <%= @task.complete %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<div class="links">
+	<%= link_to 'Edit', edit_task_path(@task) %> |
+	<%= link_to 'Delete', task_path(@task), method: :delete, data: {confirm: "Are you sureyou want to delete this task?"}%>
+	<%= link_to 'Back', tasks_path %>
+</div>

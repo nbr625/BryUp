@@ -1,0 +1,33 @@
+<div class="row clearfix">
+	<% if task.completed? %>
+		<div class="complete">
+			<%= link_to complete_task_path(task.id), method: :patch do %>
+				<i style="opacity: 0.4;" class="fa fa-check"></i>
+			<% end %>
+		</div>
+		<div class="todo_item">
+			<p style="opacity: 0.4;"><strike><%= task.name %></strike></p>
+		</div>
+		<div class="trash">
+			<%= link_to task_path(task.id), method: :delete, data: {confirm: "Are you sure you want to abandon the task?"} do %>
+				<i class="fa fa-trash"></i>
+			<% end %>
+		</div>
+
+	<% else %>
+
+		<div class="complete">
+			<%= link_to complete_task_path(task.id), method: :patch do %>
+				<i class="fa fa-check"></i>
+			<% end %>
+		</div>
+		<div class="todo_item">
+			<p><%= task.name %></p>
+		</div>
+		<div class="trash">
+			<%= link_to task_path(@quest_log, quest.id), method: :delete, data: {confirm: "Are you sure you want to abandon the task?"} do %>
+				<i class="fa fa-trash"></i>
+			<% end %>
+		</div>
+	<% end %>
+</div>

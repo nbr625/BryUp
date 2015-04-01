@@ -1,6 +1,10 @@
-<h1>Editing Task</h1>
+<h1 class="todo_list_title">Editing Task</h1>
 
-<%= render 'form' %>
-
+<div class="forms">
+	<%= render 'form' %>
+</div>
+<div class="links">
+	<%= link_to 'Cancel', tasks_path %>
+</div>
 <%= link_to 'Show', @task %> |
 <%= link_to 'Back', tasks_path %>
