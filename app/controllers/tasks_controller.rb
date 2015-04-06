@@ -14,6 +14,11 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def complete
+    @task.update_attribute(:completed_at, Time.now)
+    direct_to @quest, notice: "Task Fulfilled"
+  end
+
 
   def create
     @task = Task.new(task_params)
